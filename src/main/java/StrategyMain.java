@@ -8,6 +8,10 @@ public class StrategyMain {
     private static final Logger LOGGER = Logger.getLogger(StrategyMain.class.getName());
     public static void main(String[] args) throws IOException {
         LoggingUtil.initLogManager();
-        LOGGER.log(Level.INFO, "Criando um Factory !");
+        Website blog = WebsiteFactory.getWebsite(WebsiteType.BLOG);
+        LOGGER.log(Level.INFO,blog.getPages().toString());
+
+        Website shop = WebsiteFactory.getWebsite(WebsiteType.SHOP);
+        LOGGER.log(Level.INFO, shop.getPages().toString());
     }
 }
